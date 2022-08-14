@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class TripConverter implements Converter<Trip, TripDto> {
     @Override
     public TripDto fromEntityToDto(Trip trip) {
+
         return null;
     }
 

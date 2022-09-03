@@ -2,7 +2,7 @@ package com.sda.travelagency.converter;
 
 import com.sda.travelagency.dto.HotelFacilitiesDto;
 import com.sda.travelagency.entity.HotelFacilities;
-import org.hibernate.cfg.NotYetImplementedException;
+
 import org.springframework.stereotype.Component;
 
 @Component

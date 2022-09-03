@@ -1,14 +1,13 @@
 package com.sda.travelagency.converter;
 
-import com.sda.travelagency.dto.AttractionDto;
+
 import com.sda.travelagency.dto.HotelFacilitiesDto;
-import com.sda.travelagency.entity.Attraction;
+
 import com.sda.travelagency.entity.HotelFacilities;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Component
 public class HotelFacilitiesConverter implements Converter<HotelFacilities, HotelFacilitiesDto> {
@@ -35,7 +34,8 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
     public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
         var attractionsDtos = entity.getAttractions()
                 .stream()
-                .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+  //              .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+                .map(attractionConverter::fromEntityToDto)
                 .toList();
 
         return new HotelFacilitiesDto(attractionsDtos, entity.getApartmentFacilities());
@@ -46,7 +46,8 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
 
         var entities = dto.attractions()
                 .stream()
-                .map(attractionDto -> attractionConverter.fromDtoToEntity(attractionDto))
+ //               .map(attractionDto -> attractionConverter.fromDtoToEntity(attractionDto))
+                .map(attractionConverter::fromDtoToEntity)
                 .toList();
         return new HotelFacilities(entities, dto.apartmentFacilities());
     }

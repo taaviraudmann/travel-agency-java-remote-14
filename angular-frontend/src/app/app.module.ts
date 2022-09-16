@@ -11,6 +11,7 @@ import { ComponentsheaderComponent } from './componentsheader/componentsheader.c
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     TripListComponent,
     ComponentsheaderComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomeComponent } from './components/home/home.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    RouterModule.forRoot([
+      { path:'home', component:HomeComponent},
+      { path:'', component:HomeComponent},
+      { path:'about-us', component:AboutusComponent},
+      { path:'all-trips', component:TripListComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

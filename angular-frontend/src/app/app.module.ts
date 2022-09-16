@@ -7,11 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
+import { ComponentsheaderComponent } from './componentsheader/componentsheader.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TripListComponent
+    TripListComponent,
+    ComponentsheaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

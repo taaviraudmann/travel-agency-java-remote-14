@@ -14,6 +14,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from "@angular/router";
+import {aboutUsUrl, defaultUrl, homeUrl, tripsUrl} from "./models/urls";
 
 @NgModule({
   declarations: [
@@ -33,13 +34,15 @@ import {RouterModule} from "@angular/router";
     MatButtonModule,
     MatButtonToggleModule,
     RouterModule.forRoot([
-      { path:'home', component:HomeComponent},
-      { path:'', component:HomeComponent},
-      { path:'about-us', component:AboutusComponent},
-      { path:'all-trips', component:TripListComponent}
+      { path:defaultUrl, component:HomeComponent},
+      { path:homeUrl, component:HomeComponent},
+      { path:aboutUsUrl, component:AboutusComponent},
+      { path:tripsUrl, component:TripListComponent}
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

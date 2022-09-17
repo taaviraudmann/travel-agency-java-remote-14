@@ -35,7 +35,7 @@ public class TripConverter implements Converter<Trip, TripDto> {
                 .typeOfTransport(trip.getTypeOfTransport())
                 .paymentType(trip.getPaymentType())
                 .securityRules(securityRulesDto)
-                .mealTypes(trip.getMealTypes())
+                .mealTypes(trip.getMealType())
                 .hotelFacilities(hotelFacilitiesDto)
                 .photos(trip.getPhotos())
                 .build();
@@ -56,7 +56,7 @@ public class TripConverter implements Converter<Trip, TripDto> {
                 .typeOfTransport(tripDto.typeOfTransport())
                 .securityRules(securityRulesEntity)
                 .paymentType(tripDto.paymentType())
-                .mealTypes(tripDto.mealTypes())
+                .mealType(tripDto.mealTypes())
                 .hotelFacilities(hotelFacilitiesEntity)
                 .photos(tripDto.photos())
                 .build();

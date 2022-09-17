@@ -15,6 +15,4 @@ export class TripService {
   getAllTrip(): Observable<TripDto[]> {
     return this.http.get<TripDto[]>(allTripsUrl)
   }
-
-
 }

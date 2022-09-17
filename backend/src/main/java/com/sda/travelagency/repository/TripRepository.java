@@ -5,7 +5,6 @@ import com.sda.travelagency.entity.enumeration.MealType;
 import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,8 +13,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-//TripRepository bean will be created only when develop profile is activated
-//useful for development purposes
+// TripRepository bean will be created only when "develop" profile is activated
+// useful for development purposes
 @Profile("develop")
 @Repository
 public class TripRepository implements CrudRepository<Trip, Long> {
@@ -47,10 +46,10 @@ public class TripRepository implements CrudRepository<Trip, Long> {
                         .tripEndDate(LocalDate.now().plusDays(15))
                         .destination(new Destination("UK", "London", "Hilton"))
                         .tripPrice(new Price(BigDecimal.valueOf(500L), "EURO"))
-                        .typeOfTransport(TransportType.Plane)
-                        .securityRules(new SecurityRules("", ""))
+                        .typeOfTransport(TransportType.PLANE)
+                        .securityRules(new SecurityRules(1L, "", ""))
                         .paymentType(PaymentType.PAYPAL)
-                        .mealTypes(MealType.ALL_INCLUSIVE)
+                        .mealType(MealType.ALL_INCLUSIVE)
                         .hotelFacilities(new HotelFacilities(List.of(), List.of("bathroom", "bed")))
                         .photos(List.of("https://fastly.4sqi.net/img/general/600x600/1376806605_Hc3gxR3iMMI5OKRpt7ook-zGGreT4XxgEapWx0wC844.jpg"))
                         .build(),
@@ -59,10 +58,10 @@ public class TripRepository implements CrudRepository<Trip, Long> {
                         .tripEndDate(LocalDate.now().plusDays(15))
                         .destination(new Destination("Thailand", "Bangkok", "Sawasdee Sunshine"))
                         .tripPrice(new Price(BigDecimal.valueOf(1_500L), "baht"))
-                        .typeOfTransport(TransportType.Plane)
-                        .securityRules(new SecurityRules("", ""))
+                        .typeOfTransport(TransportType.PLANE)
+                        .securityRules(new SecurityRules(2L, "", ""))
                         .paymentType(PaymentType.CARD)
-                        .mealTypes(MealType.ALL_INCLUSIVE)
+                        .mealType(MealType.ALL_INCLUSIVE)
                         .hotelFacilities(new HotelFacilities(List.of(), List.of("Bed", "Swiming Pool", "Bathroom", "Parking")))
                         .photos(List.of("https://pix10.agoda.net/hotelImages/6796247/0/33adac49e47c732b38c54faca72b84f9.jpg?ca=22&ce=0&s=1024x768"))
                         .build());

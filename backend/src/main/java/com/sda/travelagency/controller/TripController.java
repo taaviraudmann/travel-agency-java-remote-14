@@ -39,4 +39,6 @@ public class TripController {
         var entity= tripService.findTripById(id);
         return tripConverter.fromEntityToDto(entity);
     }
+
+
 }

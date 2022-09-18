@@ -36,4 +36,5 @@ public interface TripRepository extends JpaRepository<Trip, Long> {
     default boolean isDuplicateOfOther(Trip trip) {
         return false;
     }
+
 }
